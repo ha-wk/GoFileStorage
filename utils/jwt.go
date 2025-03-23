@@ -9,7 +9,7 @@ var secretKey = []byte("your_secret_key")
 
 func GenerateJWT(username string) (string, error) {
 	claims := jwt.MapClaims{
-		"username": username,
+		"username": username,                                             //written algo to create jwt for valid of 24 hr
 		"exp":      time.Now().Add(24 * time.Hour).Unix(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
@@ -21,7 +21,7 @@ func ParseJWT(tokenStr string) (string, error) {
 		return secretKey, nil
 	})
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-		return claims["username"].(string), nil
+		return claims["username"].(string), nil                               //parsing here to make and comapre
 	}
 	return "", err
 }

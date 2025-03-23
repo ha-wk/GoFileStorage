@@ -15,7 +15,8 @@ func JWTMiddleware() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
-
+ 
+		//todo
 		username, err := utils.ParseJWT(token)
 		if err != nil {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})

@@ -1,10 +1,10 @@
 # Wobot File Storage API
 
- How to Run the Project
+ How anyone can run the Project?????
 
 1. Clone the repo:
 git clone https://github.com/ha-wk/WobotAIAssignment
-cd wobot-file-storage
+and then do cd wobot-file-storage
 
 2. Initialize the Go module:
 go mod init wobot-file-storage
